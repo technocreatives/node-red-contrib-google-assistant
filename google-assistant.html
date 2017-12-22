@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    RED.nodes.registerType("google-assistant", {
+        category: 'function',
+        color: '#0073ae',
+        defaults: {
+            name: { value: "" },
+            deviceId: { value: "" },
+            deviceModelId: { value: "" }
+        },
+        credentials: {
+            keyFilePath: { type: "text", value: "google-assistant-key.json" },
+            savedTokensPath: { type: "text", value: "google-assistant-tokens.json" }
+        },
+        inputs: 1,
+        outputs: 2,
+        icon: "feed.png",
+        label: function() {
+            return this.name || "Google Assistant";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="google-assistant">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-keyFilePath">Key File Path</label>
+        <input type="text" id="node-input-keyFilePath" placeholder="">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-savedTokensPath">Saved Tokens Path</label>
+        <input type="text" id="node-input-savedTokensPath" placeholder="">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-deviceId">Device Identifier</label>
+        <input type="text" id="node-input-deviceId" placeholder="">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-deviceModelId">Device Model Identifier</label>
+        <input type="text" id="node-input-deviceModelId" placeholder="">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="google-assistant">
+    <p></p>
+</script>
